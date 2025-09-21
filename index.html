@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="gl">
+<head>
+<meta charset="utf-8">
+<title>Relatos en galego – Manuel Piñeiro</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  body{font-family:"Georgia",serif;margin:0;padding:0;background:#fdfdfd;color:#111;line-height:1.6}
+  header{background:#2e3d49;color:#fff;padding:2rem 1rem;text-align:center}
+  header h1{margin:.2rem 0;font-size:1.7rem}
+  header p{font-size:1rem;max-width:800px;margin:.5rem auto;font-style:italic}
+  nav{background:#f5f5f5;padding:.5rem 1rem}
+  nav a{margin-right:.5rem;color:#2e3d49;text-decoration:none;font-weight:bold}
+  #lista{margin:1rem}
+  .card{background:#fff;border:1px solid #ddd;margin-bottom:1rem;padding:1rem;border-radius:4px;cursor:pointer}
+  .card h2{margin:0 0 .4rem;font-size:1.3rem}
+  .card .meta{font-size:.8rem;color:#555}
+  .card .etiquetas span{background:#e0e0e0;padding:.15rem .4rem;border-radius:3px;margin-right:.3rem;font-size:.75rem}
+  .hidden{display:none}
+  textarea,input{width:100%;font-family:inherit;padding:.5rem;border:1px solid #ccc;border-radius:3px}
+  button{background:#2e3d49;color:#fff;border:none;padding:.5rem 1rem;border-radius:3px;cursor:pointer}
+  #adminForm{margin-top:1rem}
+  #comentarios{margin-top:1rem}
+  #comentarios textarea{height:60px}
+  #comentarios p{margin:.3rem 0;font-size:.9rem}
+  #comentarios .fecha{font-size:.7rem;color:#888}
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Relatos en galego</h1>
+  <p>Páxina de publicación de relatos galegos de Manuel Piñeiro, feitos con retranca e paixón polo moderno sen perder contexto histórico, básicamente historias imposibles pero rigurosamente certas.</p>
+</header>
+
+<nav>
+  <a href="#" id="btnInicio">Inicio</a>
+  <a href="#" id="btnAdmin" class="hidden">Admin</a>
+  <input type="text" id="filtro" placeholder="Filtrar por etiquetas..." style="width:200px">
+</nav>
+
+<main>
+  <section id="seccionLista">
+    <div id="lista"></div>
+  </section>
+
+  <section id="seccionDetalle" class="hidden">
+    <button id="btnVolver">← Volver</button>
+    <div id="detalle"></div>
+    <div id="comentarios">
+      <h3>Comentarios</h3>
+      <textarea id="txtComentario" placeholder="Deixa o teu comentario..."></textarea><br>
+      <button id="btnComentar">Enviar</button>
+      <div id="listaComentarios"></div>
+    </div>
+  </section>
+
+  <section id="seccionAdmin" class="hidden">
+    <h2>Panel de administración</h2>
+    <form id="adminForm">
+      <input type="hidden" id="editId">
+      Título:<br><input id="admTitulo"><br>
+      Texto:<br><textarea id="admTexto" rows="10"></textarea><br>
+      Etiquetas (separadas por coma):<br><input id="admTags"><br>
+      <button type="submit">Gardar</button>
+      <button type="button" id="btnCancelarEdicion">Cancelar</button>
+    </form>
+    <hr>
+    <h3>Relatos existentes</h3>
+    <ul id="listaAdmin"></ul>
+  </section>
+</main>
+
+<script>
+const storageKey = 'relatosMP';
+let relatos = JSON.parse(localStorage.getItem(storageKey) || '[]');
+let idActual = null;
+
+function $(id){return document.getElementById(id);}
+function save(){localStorage.setItem(storageKey,JSON.stringify(relatos));}
+
+function renderLista(){
+  const filtro = $('filtro').value.toLowerCase().trim();
+  $('lista').innerHTML = '';
+  relatos.slice().reverse().forEach(r=>{
+    const ok = !filtro || r.tags.some(t=>t.toLowerCase().includes(filtro));
+    if(!ok) return;
+    const div=document.createElement('div');
+    div.className='card';
+    div.innerHTML=`
+      <h2>${r.titulo}</h2>
+      <div class="meta">${new Date(r.fecha).toLocaleDateString('gl-ES')}</div>
+      <div class="etiquetas">${r.tags.map(t=>'<span>'+t+'</span>').join('')}</div>`;
+    div.onclick=()=>verRelato(r.id);
+    $('lista').appendChild(div);
+  });
+}
+
+function verRelato(id){
+  idActual=id;
+  const r = relatos.find(x=>x.id===id);
+  $('detalle').innerHTML = `<h2>${r.titulo}</h2>
+    <div class="meta">${new Date(r.fecha).toLocaleString('gl-ES')}</div>
+    <div class="etiquetas">${r.tags.map(t=>'<span>'+t+'</span>').join('')}</div>
+    <p style="white-space:pre-wrap">${r.texto}</p>`;
+  mostrar('seccionDetalle');
+  renderComentarios();
+}
+
+function renderComentarios(){
+  const key='com_'+idActual;
+  const coms = JSON.parse(localStorage.getItem(key)||'[]');
+  $('listaComentarios').innerHTML='';
+  coms.reverse().forEach(c=>{
+    const p=document.createElement('p');
+    p.innerHTML=`${c.texto}<br><span class="fecha">${new Date(c.fecha).toLocaleString('gl-ES')}</span>`;
+    $('listaComentarios').appendChild(p);
+  });
+}
+
+$('btnComentar').onclick=()=>{
+  const txt=$('txtComentario').value.trim();
+  if(!txt) return;
+  const key='com_'+idActual;
+  const coms = JSON.parse(localStorage.getItem(key)||'[]');
+  coms.push({texto:txt,fecha:Date.now()});
+  localStorage.setItem(key,JSON.stringify(coms));
+  $('txtComentario').value='';
+  renderComentarios();
+};
+
+function mostrar(sec){
+  ['seccionLista','seccionDetalle','seccionAdmin'].forEach(s=>$(s).classList.add('hidden'));
+  $(sec).classList.remove('hidden');
+}
+
+$('btnInicio').onclick=()=>mostrar('seccionLista');
+$('btnVolver').onclick=()=>mostrar('seccionLista');
+$('filtro').oninput=renderLista;
+
+// ADMIN
+const esAdmin = location.search.includes('admin=1');
+if(esAdmin) $('btnAdmin').classList.remove('hidden');
+$('btnAdmin').onclick=()=>mostrar('seccionAdmin');
+
+function renderAdmin(){
+  $('listaAdmin').innerHTML='';
+  relatos.forEach(r=>{
+    const li=document.createElement('li');
+    li.innerHTML=`${r.titulo} <button onclick="edit(${r.id})">Editar</button>
+                  <button onclick="del(${r.id})">Borrar</button>`;
+    $('listaAdmin').appendChild(li);
+  });
+}
+
+function edit(id){
+  const r=relatos.find(x=>x.id===id);
+  $('editId').value=id;
+  $('admTitulo').value=r.titulo;
+  $('admTexto').value=r.texto;
+  $('admTags').value=r.tags.join(',');
+}
+
+function del(id){
+  if(!confirm('Seguro?')) return;
+  relatos=relatos.filter(x=>x.id!==id);
+  save();
+  renderAdmin();
+  renderLista();
+}
+
+$('adminForm').onsubmit=e=>{
+  e.preventDefault();
+  const tit=$('admTitulo').value.trim(), txt=$('admTexto').value.trim(), tags=$('admTags').value.split(',').map(t=>t.trim()).filter(t=>t);
+  if(!tit||!txt) return alert('Faltan datos');
+  const editId=$('editId').value;
+  if(editId){
+    const r=relatos.find(x=>x.id===editId);
+    Object.assign(r,{titulo:tit,texto:txt,tags});
+  }else{
+    relatos.push({id:Date.now(),titulo:tit,texto:txt,tags,fecha:Date.now()});
+  }
+  save();
+  $('adminForm').reset();
+  renderAdmin();
+  renderLista();
+};
+$('btnCancelarEdicion').onclick=()=>$('adminForm').reset();
+
+renderLista();
+if(esAdmin){mostrar('seccionAdmin'); renderAdmin();}
+</script>
+<!-- TinyMCE 6 CDN -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"></script>
+<script>
+tinymce.init({
+  selector: '#admTexto',
+  language: 'es',           // ou 'gl' se atopas o paquete
+  plugins: 'lists link bold italic underline',
+  toolbar: 'undo redo | bold italic underline | bullist numlist | link',
+  menubar: false,
+  height: 300
+});
+</script>
+<script src="https://cdn.jsdelivr.net/npm/tinymce@6.8.3/tinymce.min.js"></script>
+<script>
+tinymce.init({
+  selector: '#admTexto',
+  language: 'es',
+  license_key: 'gpl',     // <-- indica licenza GPL
+  plugins: 'lists link bold italic underline',
+  toolbar: 'undo redo | bold italic underline | bullist numlist',
+  menubar: false,
+  height: 300
+});
+</script>
+</body>
+</html>
