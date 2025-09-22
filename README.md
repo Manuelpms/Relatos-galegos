@@ -14,7 +14,7 @@ Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relat
 - **[Paxina.txt](Paxina.txt)**  
   Un xogo literario que desafía a forma. A páxina como espello, como voz, como silencio.
 
-- **[O home que falaba co vento](O%20home%20que%20falaba%20co%20vento.pdf)**  
+- **[Manuel da folla](https://github.com/Manuelpms/Relatos-galegos/blob/main/Manuel%20da%20Folla.pdf)**  
   Historia dun home que escoita o que ninguén quere oír. Retranca e poesía.
 
 ### 🗣️ En castelán
