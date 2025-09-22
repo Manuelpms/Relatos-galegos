@@ -20,6 +20,9 @@ Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relat
 - **[Microfaradios](https://github.com/Manuelpms/Relatos-galegos/blob/main/Microfaradios%20a%2028%20bytes%20e%20medio.pdf)**  
   Relato dun curso calquera para desempregados, se o sei, non o fago.
 
+  - **[Contos de menor cuantía](https://github.com/Manuelpms/Relatos-galegos/blob/main/Contos%20de%20menor%20cuant%C3%ADa.pdf)**  
+ Relato feito durante outro curso pra desempregados, visto dende dentro e sen anestesia.
+
 
 
 ### 🗣️ En castelán
