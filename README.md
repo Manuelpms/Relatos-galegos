@@ -8,11 +8,9 @@ Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relat
 
 ### 🌿 En galego
 
-- **[A memoria da terra](A%20memoria%20da%20terra.pdf)**  
-  Relato sobre a raíz invisible que nos une á terra. Morriña, identidade e lembranza.
+- **[A memoria da terra](https://github.com/Manuelpms/Relatos-galegos/blob/main/A%20memoria%20da%20terra.pdf)**
+- Relato da cabalo entre os séculos XX e XXI que recolle as aventuras dun inventor moi peculiar e de como acabou influindo en toda unha comarca na actualidade.
 
-- **[Paxina.txt](Paxina.txt)**  
-  Un xogo literario que desafía a forma. A páxina como espello, como voz, como silencio.
 
 - **[Manuel da folla](https://github.com/Manuelpms/Relatos-galegos/blob/main/Manuel%20da%20Folla.pdf)**  
   Historia dun home que escoita o que ninguén quere oír. Retranca e poesía.
