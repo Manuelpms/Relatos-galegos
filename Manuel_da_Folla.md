@@ -1,31 +1,33 @@
 # Manuel da Folla
 
-![Sole](imaxes/Sole.jpg)
-![Cloe](imaxes/Cloe.png)
-![Lela 2](imaxes/Lela 2.jpg)
+![Sole](imaxes/sole.jpg)
+![Cloe](imaxes/cloe.png)
+![Lela 2](imaxes/lela2.jpg)
 
 ---
 
-Aquí empieza el relato. Puedes poner las imágenes justo en el lugar que quieras dentro del texto, así:
+Aquí empieza el relato.  
+(Pega aquí el texto de tu relato. Puedes colocar las imágenes en cualquier parte del texto, solo copia la línea correspondiente y pégala donde quieras que aparezca la imagen).
 
-Texto del primer párrafo...
+Por ejemplo:
 
-![Sole](imaxes/Sole.jpg)
+Primer párrafo del relato...
 
-Texto del segundo párrafo, aquí podría ir otra imagen...
+![sole](imaxes/sole.jpg)
 
-![Cloe](imaxes/Cloe.png)
+Segundo párrafo...
 
-Texto del tercer párrafo...
+![cloe](imaxes/cloe.png)
 
-![Lela 2](imaxes/Lela 2.jpg)
+Tercer párrafo...
 
-Y así sucesivamente.  
-Solo tienes que copiar la línea de la imagen y pegarla donde quieras que aparezca.
+![lela2](imaxes/lela2.jpg)
 
 ---
 
-**Recuerda:**  
-- El nombre del archivo y la extensión deben coincidir exactamente (mayúsculas, espacios, etc.).
-- Las imágenes deben estar en la carpeta `imaxes` dentro del repo para que se vean.
-- Si abres este `.md` en GitHub, verás las imágenes incrustadas automáticamente.
+**Recuerda:**
+- Las imágenes deben estar en la carpeta `imaxes` y llamarse exactamente: `sole.jpg`, `cloe.png`, `lela2.jpg`.
+- Si necesitas poner una imagen entre dos párrafos, simplemente copia la línea que la llama y pégala donde quieras.
+
+¡Listo para subir a tu repo!  
+Si quieres que te ayude con el siguiente relato, solo dilo 😊
