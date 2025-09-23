@@ -13,7 +13,7 @@
             margin: 40px auto;
             padding: 20px;
             line-height: 1.7;
-            text-align: center; /* ✅ Texto centrado en todo */
+            text-align: center;
         }
         h1 {
             color: #2c5f2d;
@@ -22,7 +22,7 @@
             font-size: 2.4em;
             margin: 0.5em 0;
         }
-        .author {
+        .intro {
             font-style: italic;
             color: #6b8e23;
             margin: 10px 0 30px;
@@ -32,11 +32,20 @@
             color: #4a7c59;
             margin: 40px 0 20px;
             font-size: 1.8em;
+            text-align: center;
+        }
+        h3 {
+            color: #555;
+            margin: 30px 0 15px;
+            font-size: 1.4em;
         }
         ul {
             list-style: none;
             padding: 0;
-            display: inline-block; /* ✅ Centra a lista */
+            display: inline-block;
+            text-align: left;
+            width: 100%;
+            max-width: 700px;
         }
         li {
             margin: 25px 0;
@@ -44,10 +53,6 @@
             background: #fff;
             border-radius: 8px;
             box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-            text-align: left; /* ✅ Pero o contido do relato, aliñado á esquerda */
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
         }
         a {
             color: #2c5f2d;
@@ -59,13 +64,12 @@
         }
         a:hover {
             text-decoration: underline;
-            color: #1e4620; /* ✅ Enlaces destacados e con hover suave */
+            color: #1e4620;
         }
         .description {
             color: #555;
             font-size: 0.95em;
             margin: 5px 0 0;
-            text-align: left;
         }
         .footer {
             margin-top: 60px;
@@ -75,30 +79,16 @@
             color: #777;
             font-size: 1.1em;
         }
-        .how-to {
-            background: #f0f7f0;
-            padding: 25px;
-            border-radius: 10px;
-            margin: 40px auto;
-            max-width: 600px;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.08);
-        }
-        .how-to h3 {
-            margin-top: 0;
-            color: #4a7c59;
-        }
-        .how-to ol {
-            text-align: left;
-            padding-left: 20px;
-        }
     </style>
 </head>
 <body>
 
     <h1>📖 Relatos Galegos</h1>
-    <p class="author">Benvido/a ao meu recuncho literario. Son Manuel Piñeiro.</p>
+    <p class="intro">Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relatos que nacen da terra, da memoria e da retranca. Algúns son verdade, outros mentira, e moitos están entre medias. Xulgade vós, coma lectores.</p>
 
-    <h2>🌿 Relatos en galego</h2>
+    <h2>🧭 Índice de relatos</h2>
+
+    <h3>🌿 En galego</h3>
     <ul>
         <li>
             <a href="A%20memoria%20da%20terra.pdf" target="_blank">A memoria da terra</a>
@@ -113,8 +103,36 @@
             <p class="description">Cando se xuntan estes catro a falar na Viñoteca Castes a diversión está garantida.</p>
         </li>
         <li>
-            <a href="Microfaradios%20a%2028%20bytes%20e%20medio.pdf" target="_blank">Microfaradios a 28 bytes e medio</a>
+            <a href="Microfaradios%20a%2028%20bytes%20e%20medio.pdf" target="_blank">Microfaradios</a>
             <p class="description">Relato dun curso calquera para desempregados, se o sei, non o fago.</p>
         </li>
         <li>
             <a href="Contos%20de%20menor%20cuant%C3%ADa.pdf" target="_blank">Contos de menor cuantía</a>
+            <p class="description">Relato feito durante outro curso pra desempregados, visto dende dentro e sen anestesia.</p>
+        </li>
+    </ul>
+
+    <h3>🗣️ En castelán</h3>
+    <ul>
+        <li>
+            <a href="La%20princesa%20y%20el%20drag%C3%B3n.pdf" target="_blank">La princesa y el dragón</a>
+            <p class="description">Un conto clásico con xiro inesperado. Nin as princesas son tan boas nin os dragóns tan ruíns.</p>
+        </li>
+    </ul>
+
+    <h3>✍️ Comentarios do autor</h3>
+    <p>(Aquí podes engadir os teus comentarios cando queiras. Por agora, queda o espazo en branco, como no orixinal.)</p>
+
+    <h3>💬 Como podes participar?</h3>
+    <ul style="text-align: center; max-width: 500px; margin: 30px auto; background: #f0f7f0; padding: 20px; border-radius: 10px;">
+        <li style="text-align: left; margin: 15px 0;">1. Le un relato.</li>
+        <li style="text-align: left; margin: 15px 0;">2. Se che gusta, dimo. Se non, recoméndallo ao teu peor inimigo.</li>
+        <li style="text-align: left; margin: 15px 0;">3. Deixa unha palabra, ou non digas nada. Que a literatura fale por ti.</li>
+    </ul>
+
+    <div class="footer">
+        Grazas por pasar. Desfruta da lectura, e que a retranca te acompañe.
+    </div>
+
+</body>
+</html>
