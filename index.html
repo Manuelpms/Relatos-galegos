@@ -5,121 +5,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatos Galegos — Manuel Piñeiro</title>
     <style>
+        /* Estilo general */
         body {
-            font-family: 'Georgia', 'Times New Roman', serif;
-            background: #faf8f4;
-            color: #333;
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-            line-height: 1.7;
-        }
-        h1 {
-            color: #2c5f2d;
-            border-bottom: 3px solid #a8d5a2;
-            padding-bottom: 10px;
-            text-align: center;
-        }
-        .author {
-            text-align: center;
-            font-style: italic;
-            color: #6b8e23;
-            margin: 20px 0 40px;
-        }
-        h2 {
-            color: #4a7c59;
-            margin-top: 40px;
-        }
-        ul {
-            list-style: none;
+            font-family: 'Georgia', serif;
+            background-color: #f4f1ec;
+            color: #2e2e2e;
+            margin: 0;
             padding: 0;
+            line-height: 1.6;
         }
-        li {
-            margin: 20px 0;
-            padding: 15px;
-            background: #fff;
-            border-left: 4px solid #a8d5a2;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+        /* Encabezado */
+        header {
+            background-color: #3b5b3b;
+            color: #fff;
+            padding: 2em;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
         }
-        a {
-            color: #2c5f2d;
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header p {
+            font-style: italic;
+            margin-top: 0.5em;
+        }
+
+        /* Navegación */
+        nav {
+            margin-top: 1em;
+        }
+
+        nav a {
+            color: #f4f1ec;
             text-decoration: none;
-            font-size: 1.2em;
+            margin: 0 1em;
             font-weight: bold;
-            display: block;
-            margin-bottom: 8px;
         }
-        a:hover {
+
+        nav a:hover {
             text-decoration: underline;
         }
-        .description {
-            color: #555;
-            font-size: 0.95em;
-            margin: 5px 0 0;
+
+        /* Secciones */
+        section {
+            padding: 2em;
+            border-bottom: 1px solid #ccc;
         }
-        .footer {
-            margin-top: 60px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
+
+        section h2 {
+            color: #3b5b3b;
+            font-size: 1.8em;
+            margin-bottom: 0.5em;
+        }
+
+        section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+
+        section li {
+            margin-bottom: 0.5em;
+        }
+
+        section a {
+            color: #2e2e2e;
+            text-decoration: none;
+        }
+
+        section a:hover {
+            text-decoration: underline;
+            color: #3b5b3b;
+        }
+
+        /* Pie de página */
+        footer {
+            background-color: #3b5b3b;
+            color: #fff;
             text-align: center;
-            font-style: italic;
-            color: #777;
-        }
-        .how-to {
-            background: #f0f7f0;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 30px 0;
+            padding: 1em;
+            font-size: 0.9em;
         }
     </style>
 </head>
 <body>
-    <h1>📖 Relatos Galegos</h1>
-    <p class="author">Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relatos que nacen da terra, da memoria e da retranca.</p>
 
-    <h2>🌿 Relatos en galego</h2>
-    <ul>
-        <li>
-            <a href="A%20memoria%20da%20terra.pdf" target="_blank">A memoria da terra</a>
-            <p class="description">Relato da cabalo entre os séculos XX e XXI que recolle as aventuras dun inventor moi peculiar e de como acabou influindo en toda unha comarca na actualidade.</p>
-        </li>
-        <li>
-            <a href="Manuel%20da%20Folla.pdf" target="_blank">Manuel da folla</a>
-            <p class="description">Relato con humor sobre a música e a vida cotiá.</p>
-        </li>
-        <li>
-            <a href="Tertuloucos.pdf" target="_blank">Tertuloucos</a>
-            <p class="description">Cando se xuntan estes catro a falar na Viñoteca Castes a diversión está garantida.</p>
-        </li>
-        <li>
-            <a href="Microfaradios%20a%2028%20bytes%20e%20medio.pdf" target="_blank">Microfaradios a 28 bytes e medio</a>
-            <p class="description">Relato dun curso calquera para desempregados, se o sei, non o fago.</p>
-        </li>
-        <li>
-            <a href="Contos%20de%20menor%20cuant%C3%ADa.pdf" target="_blank">Contos de menor cuantía</a>
-            <p class="description">Relato feito durante outro curso pra desempregados, visto dende dentro e sen anestesia.</p>
-        </li>
-    </ul>
+    <header>
+        <h1>📖 Relatos Galegos</h1>
+        <p>Benvido/a ao meu recuncho literario. Son Manuel Piñeiro.</p>
+    </header>
 
-    <h2>🗣️ Relatos en castelán</h2>
-    <ul>
-        <li>
-            <a href="La%20princesa%20y%20el%20drag%C3%B3n.pdf" target="_blank">La princesa y el dragón</a>
-            <p class="description">Un conto clásico con xiro inesperado. Nin as princesas son tan boas nin os dragóns tan ruíns.</p>
-        </li>
-    </ul>
+    <nav>
+        <a href="#galego">Relatos en galego</a>
+        <a href="#castelan">Relatos en castelán</a>
+        <a href="#participa">Participa</a>
+    </nav>
 
-    <div class="how-to">
-        <h3>💬 Como podes participar?</h3>
+    <section id="galego">
+        <h2>🌿 Relatos en galego</h2>
+        <ul>
+            <li><a href="A%20memoria%20da%20terra.pdf" target="_blank">A memoria da terra</a> — Relato da cabalo entre os séculos XX e XXI...</li>
+            <li><a href="Manuel%20da%20Folla.pdf" target="_blank">Manuel da folla</a> — Relato con humor sobre a música e a vida cotiá.</li>
+            <li><a href="Tertuloucos.pdf" target="_blank">Tertuloucos</a> — Cando se xuntan estes catro a falar na Viñoteca Castes...</li>
+            <li><a href="Microfaradios%20a%2028%20bytes%20e%20medio.pdf" target="_blank">Microfaradios a 28 bytes e medio</a> — Relato dun curso calquera para desempregados...</li>
+            <li><a href="Contos%20de%20menor%20cuant%C3%ADa.pdf" target="_blank">Contos de menor cuantía</a> — Visto dende dentro e sen anestesia.</li>
+        </ul>
+    </section>
+
+    <section id="castelan">
+        <h2>🗣️ Relatos en castelán</h2>
+        <ul>
+            <li><a href="La%20princesa%20y%20el%20drag%C3%B3n.pdf" target="_blank">La princesa y el dragón</a> — Nin as princesas son tan boas nin os dragóns tan ruíns.</li>
+        </ul>
+    </section>
+
+    <section id="participa">
+        <h2>💬 Como podes participar?</h2>
         <ol>
             <li>Le un relato.</li>
             <li>Se che gusta, dimo. Se non, recoméndallo ao teu peor inimigo.</li>
             <li>Deixa unha palabra, ou non digas nada. Que a literatura fale por ti.</li>
         </ol>
-    </div>
+    </section>
 
-    <div class="footer">
-        <p>Grazas por pasar. Desfruta da lectura, e que a retranca te acompañe. — Manuel Piñeiro</p>
-    </div>
+    <footer>
+        Grazas por pasar. Desfruta da lectura, e que a retranca te acompañe. — Manuel Piñeiro
+    </footer>
+
 </body>
 </html>
