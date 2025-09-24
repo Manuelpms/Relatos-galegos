@@ -9,7 +9,6 @@ Tedes o meu permiso para copiar, compartir e modificar estes textos, así como p
 Se os adaptades ou transformades, agradeceríame moito que me ensinásedes o que fixeches —non é obrigatorio, pero alegraríame ver como as historias camiñan por aí.
 
 Os relatos están publicados baixo licencia **Creative Commons Attribution 4.0 (CC BY 4.0)**.  
-Podes consultala aquí: https://creativecommons.org/licenses/by/4.0/
 
 🔗 Web do proxecto: [Relatos Galegos](https://manuelpms.github.io/Relatos-galegos/)  
 📬 Deixa os teus comentarios ou contacta comigo a través da web.
