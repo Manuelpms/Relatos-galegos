@@ -1,6 +1,6 @@
 # 📖 Relatos Galegos
 
-Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relatos que nacen da terra, da memoria e da retranca. Algúns son verdade, outros mentira, e moitos están entre medias. Xulgade vós, coma lectores.
+Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relatos que nacen da terra, da memoria e da retranca. Algúns son verdade, outros mentira, e moitos están entre medias. Xulgade vós, coma lectores. Tendes o meu permiso pra copiar ou modificar os textos e darlles de boa fe todo uso cultural ou persoal posible, pero facede o favor, se facedes cambios gustaríame velos tamén. Un saúdo a todas e todos os lectores.
  **Web para ampliar lecturas ou deixar comentarios(https:// (https://manuelpms.github.io/Relatos-galegos/)**
 
 
