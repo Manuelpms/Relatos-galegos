@@ -246,24 +246,10 @@ body.dark .top-bar button{background:#333;color:#a8d5a2;}
     <div class="footer">
         Grazas por pasar. Desfruta da lectura, e que a retranca te acompañe.
     </div>
-
-// Modo noite
-const btnNoite=document.getElementById('btnNoite');
-btnNoite.addEventListener('click',()=>{
-  document.body.classList.toggle('dark');
-  // Gardamos a preferencia
-  localStorage.setItem('noite',document.body.classList.contains('dark'));
-  // Cambiamos o texto do botón
-  btnNoite.textContent=document.body.classList.contains('dark')?'☀️ Modo día':'🌙 Modo noite';
-});
-// Ao cargar, aplicamos a preferencia gardada
-if(localStorage.getItem('noite')==='true'){
-  document.body.classList.add('dark');
-  btnNoite.textContent='☀️ Modo día';
-}
 </script>
 </body>
 </html>
+
 
 
 
