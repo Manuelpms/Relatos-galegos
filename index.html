@@ -116,9 +116,46 @@ google-site-verification: google6fb0c6ea431d3ea6.html
             font-size: 1.1em;
         }
     </style>
+
+    /* --- BARRA SUPERIOR + MODO NOITE --- */
+.top-bar{
+  position:fixed;
+  top:0; left:0; right:0;
+  background:#2c5f2d;
+  padding:10px 20px;
+  display:flex;
+  justify-content:center; gap:15px;
+  box-shadow:0 2px 6px rgba(0,0,0,.25);
+  z-index:9999;
+}
+.top-bar button{
+  background:#fff;
+  color:#2c5f2d;
+  border:none;
+  padding:8px 18px;
+  border-radius:4px;
+  font-weight:bold;
+  cursor:pointer;
+  transition:background .25s;
+}
+.top-bar button:hover{background:#e8f5e9;}
+
+/* MODO NOITE */
+body.dark{
+  background:#121212;
+  color:#e0e0e0;
+}
+body.dark h1,body.dark h2,body.dark h3{color:#a8d5a2;}
+body.dark li{background:#1e1e1e;}
+body.dark .top-bar{background:#1e3c1f;}
+body.dark .top-bar button{background:#333;color:#a8d5a2;}
 </head>
 
 <body>
+    <div class="top-bar">
+  <button id="btnDescargar">⬇️ Descargar PDF completo</button>
+  <button id="btnNoite">🌙 Modo noite</button>
+</div>
     <h1>📖 Relatos galegos – Literatura breve en gallego</h1>
 
     <p class="intro">Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relatos que nacen da terra, da memoria e da retranca.
@@ -209,9 +246,34 @@ google-site-verification: google6fb0c6ea431d3ea6.html
     <div class="footer">
         Grazas por pasar. Desfruta da lectura, e que a retranca te acompañe.
     </div>
+<script>
+// Descarga: creamos un zip cos PDFs que queiras (ou ligamos a un único ficheiro xa xerado)
+// Aquí deixo un exemplo sinxelo: rediriximos a un PDF "todos-os-relatos.pdf" que ti subas ao repo.
+document.getElementById('btnDescargar').addEventListener('click',()=>{
+  // Se tes un só ficheiro:  
+  window.open('todos-os-relatos.pdf','_blank');
+  // Se prefires un .zip con todos: descomenta a seguinte e xera o zip.
+  // window.open('relatos-galegos.zip','_blank');
+});
 
+// Modo noite
+const btnNoite=document.getElementById('btnNoite');
+btnNoite.addEventListener('click',()=>{
+  document.body.classList.toggle('dark');
+  // Gardamos a preferencia
+  localStorage.setItem('noite',document.body.classList.contains('dark'));
+  // Cambiamos o texto do botón
+  btnNoite.textContent=document.body.classList.contains('dark')?'☀️ Modo día':'🌙 Modo noite';
+});
+// Ao cargar, aplicamos a preferencia gardada
+if(localStorage.getItem('noite')==='true'){
+  document.body.classList.add('dark');
+  btnNoite.textContent='☀️ Modo día';
+}
+</script>
 </body>
 </html>
+
 
 
 
