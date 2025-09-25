@@ -246,15 +246,6 @@ body.dark .top-bar button{background:#333;color:#a8d5a2;}
     <div class="footer">
         Grazas por pasar. Desfruta da lectura, e que a retranca te acompañe.
     </div>
-<script>
-// Descarga: creamos un zip cos PDFs que queiras (ou ligamos a un único ficheiro xa xerado)
-// Aquí deixo un exemplo sinxelo: rediriximos a un PDF "todos-os-relatos.pdf" que ti subas ao repo.
-document.getElementById('btnDescargar').addEventListener('click',()=>{
-  // Se tes un só ficheiro:  
-  window.open('todos-os-relatos.pdf','_blank');
-  // Se prefires un .zip con todos: descomenta a seguinte e xera o zip.
-  // window.open('relatos-galegos.zip','_blank');
-});
 
 // Modo noite
 const btnNoite=document.getElementById('btnNoite');
@@ -273,6 +264,7 @@ if(localStorage.getItem('noite')==='true'){
 </script>
 </body>
 </html>
+
 
 
 
