@@ -129,27 +129,6 @@
 
 <body>
     <h1>📖 Relatos galegos – Literatura breve en galego e castelán</h1>
- <h1>📖 Relatos galegos – Literatura breve en galego e castelán</h1>
-
-<div style="text-align:center; margin:20px 0;">
-  <p>Visitas totais:</p>
-  <p><strong id="contador">Cargando...</strong></p>
-</div>
-
-<script>
-  fetch('https://raw.githubusercontent.com/Manuelpms/Relatos-galegos/main/visitas.json')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('contador').textContent = data.contador;
-    })
-    .catch(error => {
-      console.error('Erro ao cargar o contador:', error);
-      document.getElementById('contador').textContent = 'Erro';
-    });
-</script>
-
-
-
 
     <p class="intro">Benvido/a ao meu recuncho literario. Son Manuel Piñeiro, e aquí comparto relatos que nacen da terra, da memoria e da retranca. Algúns son verdade, outros mentira, e moitos están entre medias. Xulgade vós, coma lectores.</p>
 
@@ -313,6 +292,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
