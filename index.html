@@ -131,18 +131,23 @@
     <h1>📖 Relatos galegos – Literatura breve en galego e castelán</h1>
  <h1>📖 Relatos galegos – Literatura breve en galego e castelán</h1>
 
-<!-- Contador local de visitas -->
 <div style="text-align:center; margin:20px 0;">
-  <p>Visitas neste navegador:</p>
-  <p><strong id="visit-count">0</strong></p>
+  <p>Visitas totais:</p>
+  <p><strong id="contador">Cargando...</strong></p>
 </div>
 
 <script>
-  let visitas = localStorage.getItem('visitasRelatos') || 100;
-  visitas++;
-  localStorage.setItem('visitasRelatos', visitas);
-  document.getElementById('visit-count').textContent = visitas;
+  fetch('https://raw.githubusercontent.com/Manuelpms/Relatos-galegos/main/visitas.json')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('contador').textContent = data.contador;
+    })
+    .catch(error => {
+      console.error('Erro ao cargar o contador:', error);
+      document.getElementById('contador').textContent = 'Erro';
+    });
 </script>
+
 
 
 
@@ -308,6 +313,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
