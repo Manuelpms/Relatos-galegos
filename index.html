@@ -129,17 +129,20 @@
 
 <body>
     <h1>📖 Relatos galegos – Literatura breve en galego e castelán</h1>
-  <!-- Contador de visitas -->
+ <h1>📖 Relatos galegos – Literatura breve en galego e castelán</h1>
+
+<!-- Contador local de visitas -->
 <div style="text-align:center; margin:20px 0;">
-  <p>Visitas totais:</p>
-  <div id="sfck7ya5tx2h7gxz3emrkh7bf46akhdadu6"></div>
-  <script type="text/javascript" src="https://counter1.optistats.ovh/private/counter.js?c=k7ya5tx2h7gxz3emrkh7bf46akhdadu6&down=async" async></script>
-  <noscript>
-    <a href="https://www.freecounterstat.com" title="hit counter">
-      <img src="https://counter1.optistats.ovh/private/freecounterstat.php?c=k7ya5tx2h7gxz3emrkh7bf46akhdadu6" border="0" title="hit counter" alt="hit counter">
-    </a>
-  </noscript>
+  <p>Visitas neste navegador:</p>
+  <p><strong id="visit-count">0</strong></p>
 </div>
+
+<script>
+  let visitas = localStorage.getItem('visitasRelatos') || 100;
+  visitas++;
+  localStorage.setItem('visitasRelatos', visitas);
+  document.getElementById('visit-count').textContent = visitas;
+</script>
 
 
 
@@ -305,6 +308,7 @@
 </footer>
 </body>
 </html>
+
 
 
 
